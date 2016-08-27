@@ -54,7 +54,7 @@ public class FileAnalyzerUtil {
      * @param expression  extension or nameOfFile
      * @return the array of files if the parameters are validated
      * @throws IllegalArgumentException if Incorrect path to file.
-     * @throws RuntimeException if incorrect  expression values: nameOfFile or extension .value.
+     * @throws ArithmeticException if incorrect  expression values: nameOfFile or extension .value.
      * @throws NullPointerException if path to file is not a directory.
      * @throws IllegalArgumentException if directory is empty.
      */
@@ -66,7 +66,7 @@ public class FileAnalyzerUtil {
         }
         //validation incoming values
         if (expression == null || expression.isEmpty()) {
-            throw new RuntimeException("Incorrect  expression values");
+            throw new ArithmeticException("Incorrect  expression values");
         }
         File directory = new File(pathToFiles);
         if (!directory.isDirectory()) {
